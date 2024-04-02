@@ -1,11 +1,24 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const [isClicked, setIsClicked] = useState(false);
+  const buttons = [
+    "Development",
+    "Graphic Design",
+    "Design System",
+    "UI/UX Design",
+    "Other",
+  ];
+
+  function handleClick() {
+    return setIsClicked((prevState) => !prevState);
+  }
 
   const variants = {
     initial: { y: 50, opacity: 0 },
@@ -16,6 +29,25 @@ const footer = () => {
     gmail: "priyank_saini@yahoo.com",
     phone: "+91 8689031239",
     address: "The LNM Institute of Information Technology",
+  };
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_exzxj4q", "template_2rvfdcb", form.current, {
+        publicKey: "5p-BvfwrTb8f2Bm9t",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS! Message Sent");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
 
   return (
@@ -35,63 +67,110 @@ const footer = () => {
             <p className="text-[40px] text-[#7FE143]">Collaboration</p>
             <img src="./assets/colab.svg" alt="" className="w-[40px]" />
           </div>
-          <div className="sm:text-6xl text-3xl font-bold">Let’s talk to Collaboration</div>
+          <div className="sm:text-6xl text-3xl font-bold">
+            Let’s talk to Collaboration
+          </div>
           <div className="flex flex-col gap-10 pt-10">
             <p className="font-bold text-white sm:text-[20px] text-[18px] flex flex-row gap-3">
               <img src="./assets/mail.png" alt="" className="w-[30px]" />
               {contact.gmail}
             </p>
             <p className="font-bold text-white sm:text-[20px] text-[18px] flex flex-row gap-3">
-            <img src="./assets/phone.png" alt="" className="w-[30px]" />
+              <img src="./assets/phone.png" alt="" className="w-[30px]" />
               {contact.phone}
             </p>
             <p className="font-bold text-white sm:text-[20px] text-[18px] flex flex-row gap-3">
-            <img src="./assets/pin.png" alt="" className="w-[30px]" />
+              <img src="./assets/pin.png" alt="" className="w-[30px]" />
               {contact.address}
             </p>
           </div>
         </div>
         <div className="sm:w-1/2 w-full bg-[white] rounded-lg flex flex-col gap-10 p-10 sm:m-0 mt-20">
-          <p className="sm:text-3xl text-xl font-bold text-black">I'm Interested in...</p>
+          <p className="sm:text-3xl text-xl font-bold text-black">
+            I'm Interested in...
+          </p>
           <div className="flex flex-wrap gap-5">
-            <button className="px-[20px] py-[15px] rounded-md bg-[#449E0D] text-[20px] font-bold text-white">
+            <button
+              onClick={handleClick}
+              className={`px-[20px] py-[15px] rounded-md bg-[${
+                isClicked ? "white" : "#449E0D"
+              }] text-[20px] font-bold text-${
+                isClicked ? "zinc-600" : "white"
+              } ${isClicked ? "border-2 border-zinc-400" : ""}`}
+            >
               Development
             </button>
-            <button className="px-[20px] py-[15px] rounded-md bg-[#449E0D] text-[20px] font-bold text-white">
+
+            <button
+              onClick={handleClick}
+              className={`px-[20px] py-[15px] rounded-md bg-[${
+                isClicked ? "white" : "#449E0D"
+              }] text-[20px] font-bold text-${
+                isClicked ? "zinc-600" : "white"
+              } ${isClicked ? "border-2 border-zinc-400" : ""}`}
+            >
               Graphic Design
             </button>
-            <button className="px-[20px] py-[15px] rounded-md bg-[#449E0D] text-[20px] font-bold text-white">
+            <button
+              onClick={handleClick}
+              className={`px-[20px] py-[15px] rounded-md bg-[${
+                isClicked ? "white" : "#449E0D"
+              }] text-[20px] font-bold text-${
+                isClicked ? "zinc-600" : "white"
+              } ${isClicked ? "border-2 border-zinc-400" : ""}`}
+            >
               Design System
             </button>
-            <button className="px-[20px] py-[15px] rounded-md bg-[#449E0D] text-[20px] font-bold text-white">
+            <button
+              onClick={handleClick}
+              className={`px-[20px] py-[15px] rounded-md bg-[${
+                isClicked ? "white" : "#449E0D"
+              }] text-[20px] font-bold text-${
+                isClicked ? "zinc-600" : "white"
+              } ${isClicked ? "border-2 border-zinc-400" : ""}`}
+            >
               UI/UX Design
             </button>
-            <button className="px-[20px] py-[15px] rounded-md bg-[#449E0D] text-[20px] font-bold text-white">
+            <button
+              onClick={handleClick}
+              className={`px-[20px] py-[15px] rounded-md bg-[${
+                isClicked ? "white" : "#449E0D"
+              }] text-[20px] font-bold text-${
+                isClicked ? "zinc-600" : "white"
+              } ${isClicked ? "border-2 border-zinc-400" : ""}`}
+            >
               Other
             </button>
           </div>
 
-          <form action="submit" className=" flex flex-col gap-10">
+          <form
+            ref={form}
+            action="submit"
+            className=" flex flex-col gap-10"
+            onSubmit={sendEmail}
+          >
             <input
               type="text"
               placeholder="Your name"
-              className="p-5 text-black font-semibold w-full"
+              name="user_name"
+              className="p-5 text-black font-semibold w-full outline-none border-b border-zinc-300"
             />
             <input
               type="email"
               placeholder="Your email"
-              className="p-5 text-black font-semibold w-full"
+              name="user_email"
+              className="p-5 text-black font-semibold w-full outline-none border-b border-zinc-300"
             />
             <input
               type="text"
               placeholder="Your message"
-              className="p-5 text-black font-semibold w-full"
+              name="message"
+              className="p-5 text-black font-semibold w-full outline-none border-b border-zinc-300"
             />
             <button
               type="submit"
               className="px-[20px] py-[15px] bg-[#449E0D] hover:bg-[#6db737] rounded-md font-bold sm:w-[40%] w-full text-[20px] flex flex-row gap-2 justify-center items-center"
             >
-              
               Send Message
               <img src="./assets/paper-plane.png" alt="" className="h-[20px]" />
             </button>
