@@ -1,18 +1,21 @@
 "use client";
 
+import { useEffect } from "react";
+
 const Lines = () => {
-  const scrollers = document.querySelectorAll(".scroller");
+  useEffect(() => {
+    const scrollers = document.querySelectorAll(".scroller");
 
-  if(!window.matchMedia("(prefers-recuded-motion: reduce)").matches) {
-    addAnimation();
-  }
+    function addAnimation() {
+      scrollers.forEach(scroller => {
+        scroller.setAttribute('data-animated', true);
+      });
+    }
 
-  function addAnimation() {
-    scrollers.forEach(scroller => {
-      scroller.setAttribute('data-animated', true);
-    });
-  }
-
+    if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      addAnimation();
+    }
+  }, []);
 
   return (
     <div className="flex flex-col pt-20 whitespace-nowrap overflow-hidden">

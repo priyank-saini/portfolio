@@ -4,21 +4,29 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const footer = () => {
+const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const [isClicked, setIsClicked] = useState(false);
+  const [isTapped, setIsTapped] = useState(false);
+  const [StateMap,seStateMap]=useState([false,false,false,false,false]);
+  function onTap(index) {
+    const newarray=[...StateMap];
+    newarray[index]=!newarray[index];
+    seStateMap(newarray);
+  }
+
   const buttons = [
     "Development",
+    "UI/UX",
     "Graphic Design",
-    "Design System",
-    "UI/UX Design",
+    "Design Systems",
     "Other",
   ];
-
-  function handleClick() {
-    return setIsClicked((prevState) => !prevState);
-  }
+  
+ 
+  //  const buttonMap ={
+  //   "Development": "UI/UX", "Graphic Design", "Design Systems", "Other"
+  //  }
 
   const variants = {
     initial: { y: 50, opacity: 0 },
@@ -43,9 +51,11 @@ const footer = () => {
       .then(
         () => {
           console.log("SUCCESS! Message Sent");
+          window.alert("Message Sent");
         },
         (error) => {
           console.log("FAILED...", error.text);
+          window.alert("Error: Message not Sent");
         }
       );
   };
@@ -87,60 +97,25 @@ const footer = () => {
         </div>
         <div className="sm:w-1/2 w-full bg-[white] rounded-lg flex flex-col gap-10 p-10 sm:m-0 mt-20">
           <p className="sm:text-3xl text-xl font-bold text-black">
-            I'm Interested in...
+            I&apos;m Interested in...
           </p>
           <div className="flex flex-wrap gap-5">
-            <button
-              onClick={handleClick}
-              className={`px-[20px] py-[15px] rounded-md bg-[${
-                isClicked ? "white" : "#449E0D"
-              }] text-[20px] font-bold text-${
-                isClicked ? "zinc-600" : "white"
-              } ${isClicked ? "border-2 border-zinc-400" : ""}`}
-            >
-              Development
-            </button>
-
-            <button
-              onClick={handleClick}
-              className={`px-[20px] py-[15px] rounded-md bg-[${
-                isClicked ? "white" : "#449E0D"
-              }] text-[20px] font-bold text-${
-                isClicked ? "zinc-600" : "white"
-              } ${isClicked ? "border-2 border-zinc-400" : ""}`}
-            >
-              Graphic Design
-            </button>
-            <button
-              onClick={handleClick}
-              className={`px-[20px] py-[15px] rounded-md bg-[${
-                isClicked ? "white" : "#449E0D"
-              }] text-[20px] font-bold text-${
-                isClicked ? "zinc-600" : "white"
-              } ${isClicked ? "border-2 border-zinc-400" : ""}`}
-            >
-              Design System
-            </button>
-            <button
-              onClick={handleClick}
-              className={`px-[20px] py-[15px] rounded-md bg-[${
-                isClicked ? "white" : "#449E0D"
-              }] text-[20px] font-bold text-${
-                isClicked ? "zinc-600" : "white"
-              } ${isClicked ? "border-2 border-zinc-400" : ""}`}
-            >
-              UI/UX Design
-            </button>
-            <button
-              onClick={handleClick}
-              className={`px-[20px] py-[15px] rounded-md bg-[${
-                isClicked ? "white" : "#449E0D"
-              }] text-[20px] font-bold text-${
-                isClicked ? "zinc-600" : "white"
-              } ${isClicked ? "border-2 border-zinc-400" : ""}`}
-            >
-              Other
-            </button>
+            {buttons.map((item,index) => (
+              <motion.button
+                key={item}
+                whileTap={{ scale: 0.8 }}
+                onClick={()=>{onTap(index)}}
+                className={`text-[20px] ${
+                  StateMap[index]
+                    ? "bg-[#7FE143] text-white border-2 border-white"
+                    : "bg-[white] text-zinc-600 border-2 border-zinc-600"
+                }
+              px-[20px] py-[10px] font-bold rounded-md
+              `}
+              >
+                {item}
+              </motion.button>
+            ))}
           </div>
 
           <form
@@ -169,7 +144,7 @@ const footer = () => {
             />
             <button
               type="submit"
-              className="px-[20px] py-[15px] bg-[#449E0D] hover:bg-[#6db737] rounded-md font-bold sm:w-[40%] w-full text-[20px] flex flex-row gap-2 justify-center items-center"
+              className="px-[20px] py-[10px] bg-[#449E0D] hover:bg-[#6db737] rounded-md font-bold sm:w-[40%] w-full text-[20px] flex flex-row gap-2 justify-center items-center"
             >
               Send Message
               <img src="./assets/paper-plane.png" alt="" className="h-[20px]" />
@@ -236,4 +211,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;

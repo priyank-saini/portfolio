@@ -8,7 +8,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { timelineData } from "./timelineData";
 import { useInView } from "react-intersection-observer";
 
-const page = () => {
+const Page = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
   });
@@ -46,4 +46,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

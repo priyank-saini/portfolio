@@ -1,6 +1,12 @@
 "use client";
 
-import AnimatedNumbers from "react-animated-numbers";
+import dynamic from 'next/dynamic';
+
+const AnimatedNumbers = dynamic(
+  () => import('react-animated-numbers'),
+  { ssr: false }  // This line is important. It disables server-side rendering for this module.
+);
+
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -19,7 +25,7 @@ const achievement = [
   },
 ];
 
-const page = () => {
+const Page = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -68,7 +74,7 @@ const page = () => {
             With expertise in the latest technologies, I seamlessly blend
             creativity and functionality to deliver innovative solutions. My
             passion for design fuels my commitment to precision, ensuring every
-            project exceeds expectations. Let's collaborate to transform ideas
+            project exceeds expectations. Let&apos;s collaborate to transform ideas
             into visually stunning and user-friendly interfaces that leave a
             lasting impression.
           </p>
@@ -100,4 +106,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

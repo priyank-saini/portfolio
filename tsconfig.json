@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/About/page.jsx", "app/components/Timeline/page.jsx", "app/components/Proficiences/page.jsx", "app/components/Portfolio/page.jsx", "app/components/Lines/page.jsx", "app/components/Line/page.jsx", "app/components/Home/page.jsx", "app/components/Footer/page.jsx", "app/components/Experiences/page.jsx", "app/page.jsx", "app/layout.jsx"],
   "exclude": ["node_modules"]
 }

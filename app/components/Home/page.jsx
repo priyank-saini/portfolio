@@ -33,7 +33,7 @@ const page = () => {
       </div>
 
       <div className="flex flex-col w-auto p-20 h-1/2">
-        <p className="sm:text-5xl font-semibold text-[#7FE143] text-[25px]">Hi I'm,</p>
+        <p className="sm:text-5xl font-semibold text-[#7FE143] text-[25px]">Hi I&apos;m,</p>
         <p className="sm:text-[70px] font-black text-[25px]">
         <TypeAnimation
       sequence={[
