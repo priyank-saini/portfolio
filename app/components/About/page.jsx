@@ -37,7 +37,7 @@ const Page = () => {
 
   return (
     <section id="about">
-      <main className="px-20 flex sm:flex-row flex-col pt-[200px]">
+      <main className="px-20 flex sm:flex-row flex-col">
         {/* Left Side */}
         <motion.div
           ref={ref}

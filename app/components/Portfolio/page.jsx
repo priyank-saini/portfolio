@@ -42,7 +42,7 @@ const Portfolio = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   return (
-    <div className="pt-[200px] px-20 flex flex-col gap-20" id="projects">
+    <div className="px-20 flex flex-col gap-20" id="projects">
       <div className="flex flex-col gap-5">
         <p className="text-[#7FE143] text-[40px]">My Portfolio</p>
         <p className="sm:text-5xl text-3xl font-medium">Selected Works 2022-2024</p>
@@ -71,11 +71,11 @@ const Portfolio = () => {
               animate="show"
               className="w-full flex flex-col gap-10"
             >
-              <div className="sm:w-[80%] w-full h-[3px] bg-zinc-300 rounded-[100px]"></div>
+              <div className="w-full h-[3px] bg-zinc-300 rounded-[100px]"></div>
               <div
                 onMouseEnter={() => setHoveredProject(project)}
                 onMouseLeave={() => setHoveredProject(null)}
-                className="flex flex-row justify-between sm:w-[80%] w-full items-center cursor-pointer"
+                className="flex flex-row justify-between w-full items-center cursor-pointer"
               >
                 <p className="sm:text-[32px] text-[24px] font-bold">{project.name}</p>{" "}
                 <p className="sn:text-[24px] text-[18px] font-bold text-zinc-400">

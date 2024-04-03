@@ -10,7 +10,7 @@ import Footer from "./components/Footer/page";
 
 const page = () => {
   return (
-    <main>
+    <main className="flex flex-col gap-[200px]">
       <Home/>
       <Proficiences/>
       <About/>

@@ -7,7 +7,6 @@ import emailjs from "@emailjs/browser";
 const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const [isTapped, setIsTapped] = useState(false);
   const [StateMap,seStateMap]=useState([false,false,false,false,false]);
   function onTap(index) {
     const newarray=[...StateMap];
@@ -67,18 +66,18 @@ const Footer = () => {
       initial="initial"
       animate={isInView ? "animate" : "initial"}
       transition={"transition"}
-      className="flex flex-col gap-10 justify-center items-center pt-[200px] pb-2"
+      className="flex flex-col gap-10 justify-center items-center pb-2 px-20"
       id="contacts"
     >
       {/* Contact Section */}
-      <div className="sm:w-[80%] w-full sm:h-[800px] rounded-lg sm:bg-zinc-900 px-[50px] sm:p-[50px] flex sm:flex-row flex-col justify-center">
+      <div className="w-full sm:h-[800px] rounded-lg sm:bg-zinc-900 px-[50px] sm:p-[50px] flex sm:flex-row flex-col justify-center">
         <div className="sm:w-1/2 w-full flex flex-col gap-10">
           <div className="flex flex-row gap-5">
             <p className="text-[40px] text-[#7FE143]">Collaboration</p>
             <img src="./assets/colab.svg" alt="" className="w-[40px]" />
           </div>
           <div className="sm:text-6xl text-3xl font-bold">
-            Let’s talk to Collaboration
+            Let&apos;s talk to Collaboration
           </div>
           <div className="flex flex-col gap-10 pt-10">
             <p className="font-bold text-white sm:text-[20px] text-[18px] flex flex-row gap-3">
@@ -95,8 +94,8 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="sm:w-1/2 w-full bg-[white] rounded-lg flex flex-col gap-10 p-10 sm:m-0 mt-20">
-          <p className="sm:text-3xl text-xl font-bold text-black">
+        <div className="sm:w-1/2 w-full bg-[white] rounded-lg flex flex-col gap-5 p-5 sm:m-0 mt-20">
+          <p className="sm:text-xl text-xl font-bold text-black">
             I&apos;m Interested in...
           </p>
           <div className="flex flex-wrap gap-5">
@@ -105,7 +104,7 @@ const Footer = () => {
                 key={item}
                 whileTap={{ scale: 0.8 }}
                 onClick={()=>{onTap(index)}}
-                className={`text-[20px] ${
+                className={`text-sm ${
                   StateMap[index]
                     ? "bg-[#7FE143] text-white border-2 border-white"
                     : "bg-[white] text-zinc-600 border-2 border-zinc-600"
@@ -128,23 +127,23 @@ const Footer = () => {
               type="text"
               placeholder="Your name"
               name="user_name"
-              className="p-5 text-black font-semibold w-full outline-none border-b border-zinc-300"
+              className="p-3 text-black font-semibold w-full outline-none border-b border-zinc-300"
             />
             <input
               type="email"
               placeholder="Your email"
               name="user_email"
-              className="p-5 text-black font-semibold w-full outline-none border-b border-zinc-300"
+              className="p-3 text-black font-semibold w-full outline-none border-b border-zinc-300"
             />
             <input
               type="text"
               placeholder="Your message"
               name="message"
-              className="p-5 text-black font-semibold w-full outline-none border-b border-zinc-300"
+              className="p-3 text-black font-semibold w-full outline-none border-b border-zinc-300"
             />
             <button
               type="submit"
-              className="px-[20px] py-[10px] bg-[#449E0D] hover:bg-[#6db737] rounded-md font-bold sm:w-[40%] w-full text-[20px] flex flex-row gap-2 justify-center items-center"
+              className="px-15 py-5 bg-[#449E0D] hover:bg-[#6db737] rounded-md font-bold sm:w-[40%] w-full text-[20px] flex flex-row gap-2 justify-center items-center"
             >
               Send Message
               <img src="./assets/paper-plane.png" alt="" className="h-[20px]" />
@@ -153,7 +152,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="sm:w-[80%] h-px bg-white"></div>
+      <div className="sm:w-[100%] h-px bg-white"></div>
 
       <div className="flex sm:justify-between flex-col sm:flex-row gap-10 px-[50px]">
         <div className="sm:w-1/2 w-full flex flex-col gap-10">

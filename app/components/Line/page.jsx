@@ -18,7 +18,7 @@ const Lines = () => {
   }, []);
 
   return (
-    <div className="flex flex-col pt-20 whitespace-nowrap overflow-hidden">
+    <div className="flex flex-col whitespace-nowrap overflow-hidden">
       <ul className="scroller sm:text-[80px] text-[40px] font-extrabold flex flex-row gap-20 list-disc" style={{animation: "scroll 20s linear infinite"}}>
         <li>USER RESEARCH</li>
         <li>UI DESIGN</li>
