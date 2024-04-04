@@ -42,10 +42,10 @@ const Portfolio = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   return (
-    <div className="px-20 flex flex-col gap-20" id="projects">
+    <div className="px-20 flex flex-col gap-10 scroll-mt-24" id="projects">
       <div className="flex flex-col gap-5">
-        <p className="text-[#7FE143] text-[40px]">My Portfolio</p>
-        <p className="sm:text-5xl text-3xl font-medium">Selected Works 2022-2024</p>
+        <p className="text-[#7FE143] text-[30px]">My Portfolio</p>
+        <p className="sm:text-3xl text-xl font-medium">Selected Works 2022-2024</p>
       </div>
 
       <div className="w-full flex sm:flex-row flex-col gap-20">
@@ -62,7 +62,7 @@ const Portfolio = () => {
           />
         </motion.div>
         <div className="sm:w-1/2 w-full flex flex-col items-start justify-center text-white gap-10">
-          <h1 className="text-[64px] font-extrabold">PROJECTS</h1>
+          <h1 className="text-[40px] font-extrabold">PROJECTS</h1>
           {portfolioData.map((project, index) => (
             <motion.div
               key={index}
@@ -77,8 +77,8 @@ const Portfolio = () => {
                 onMouseLeave={() => setHoveredProject(null)}
                 className="flex flex-row justify-between w-full items-center cursor-pointer"
               >
-                <p className="sm:text-[32px] text-[24px] font-bold">{project.name}</p>{" "}
-                <p className="sn:text-[24px] text-[18px] font-bold text-zinc-400">
+                <p className="sm:text-[24px] text-[18px] font-bold">{project.name}</p>{" "}
+                <p className="sn:text-[18px] text-[12px] font-bold text-zinc-400">
                   {project.domain}
                 </p>
               </div>

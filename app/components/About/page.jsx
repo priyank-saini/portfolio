@@ -36,7 +36,7 @@ const Page = () => {
   };
 
   return (
-    <section id="about">
+    <section className='scroll-mt-24' id="about">
       <main className="px-20 flex sm:flex-row flex-col">
         {/* Left Side */}
         <motion.div
@@ -48,8 +48,8 @@ const Page = () => {
           className="sm:w-1/2 w-full"
         >
           <div className="flex flex-col gap-10">
-            <p className="text-[40px] text-[#7FE143]">About Me</p>
-            <p className="sm:text-[32px] text-[25px]">
+            <p className="text-[30px] text-[#7FE143]">About Me</p>
+            <p className="sm:text-[24px] text-[20px]">
               Consistently deliver exceptional quality work with precision and
               finesse
             </p>
@@ -66,9 +66,9 @@ const Page = () => {
           initial="initial"
           animate={isInView ? "animate" : "initial"}
           transition={"transition"}
-          className="sm:w-1/2 w-full sm:mt-[400px] pt-[50px]"
+          className="sm:w-1/2 w-full sm:mt-[200px] pt-[50px]"
         >
-          <p className="text-[24px]">
+          <p className="text-[20px]">
             I am Priyank Saini, a seasoned Frontend Developer and UI/UX
             Designer, dedicated to crafting captivating digital experiences.
             With expertise in the latest technologies, I seamlessly blend
