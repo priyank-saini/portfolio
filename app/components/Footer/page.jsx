@@ -105,13 +105,13 @@ const Footer = () => {
           </p>
           <div className="flex flex-wrap gap-5">
             {buttons.map((item, index) => (
-              <motion.button
+              <motion.div
                 key={item}
                 whileTap={{ scale: 0.8 }}
                 onClick={() => {
                   onTap(index);
                 }}
-                className={`text-sm ${
+                className={`text-sm cursor-pointer ${
                   StateMap[index]
                     ? "bg-[#7FE143] text-white border-2 border-white"
                     : "bg-[white] text-zinc-600 border-2 border-zinc-600"
@@ -120,22 +120,25 @@ const Footer = () => {
               `}
               >
                 {item}
-              </motion.button>
+              </motion.div>
             ))}
           </div>
           <input
+            required
             type="text"
             placeholder="Your name"
             name="user_name"
             className="p-3 text-black font-semibold w-full outline-none border-b border-zinc-300"
           />
           <input
+            required
             type="email"
             placeholder="Your email"
             name="user_email"
             className="p-3 text-black font-semibold w-full outline-none border-b border-zinc-300"
           />
           <input
+            required
             type="text"
             placeholder="Your message"
             name="message"
@@ -143,7 +146,7 @@ const Footer = () => {
           />
           <button
             type="submit"
-            className="px-[20px] py-[10px] bg-[#449E0D] hover:bg-[#6db737] rounded-md font-bold sm:w-[40%] w-full flex flex-row gap-2 justify-center items-center"
+            className="px-[20px] py-[10px] bg-[#7FE143] hover:bg-[#90e851] rounded-md font-bold sm:w-[40%] w-full flex flex-row gap-2 justify-center items-center"
           >
             Send Message
             <img src="./assets/paper-plane.png" alt="" className="h-[20px]" />
