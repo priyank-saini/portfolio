@@ -1,14 +1,12 @@
 "use client";
-
-import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 
 const page = () => {
   return (
-    <div className="flex flex-col justify-between scroll-mt-24">
-      <div className="h-full flex flex-col gap-10">
+    <div className="flex flex-col justify-between scroll-mt-24 pt-[150px]">
+      <div className="h-full flex flex-col sm:gap-20 gap-10">
 
-        <div className="px-10 sm:px-20 h-1/3">
+        <div className="h-1/3">
           {/* <img src="./assets/background.png" alt="" className="object-cover w-full h-full rounded-[50px] border-white border-2"/> */}
           <video
             className="w-full h-full object-cover rounded-[50px]"
@@ -20,7 +18,7 @@ const page = () => {
           </video>
         </div>
 
-        <div className="flex flex-col w-auto px-10 h-1/2">
+        <div className="flex flex-col w-auto h-1/2">
           <p className="sm:text-3xl font-semibold text-[#7FE143] text-[25px]">
             Hi I&apos;m,
           </p>

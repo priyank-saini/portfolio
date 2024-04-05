@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
-    <div className="navbar hidden z-20 h-[80px] text-white px-20 flex items-center justify-between text-[24px] w-full bg-black sm:visible fixed">
+    <div className="navbar z-20 h-[80px] w-full pr-40 text-white flex items-center justify-between text-[24px] bg-black sm:visible fixed">
       {/*Navbar*/}
       {/* Left Part */}
       <div className="flex flex-row">

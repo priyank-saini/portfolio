@@ -65,7 +65,7 @@ const Footer = () => {
       initial="initial"
       animate={isInView ? "animate" : "initial"}
       transition={"transition"}
-      className="flex flex-col gap-5 justify-center scroll-mt-24 items-center pb-2 sm:px-20 px-10 sm:gap-10"
+      className="flex flex-col gap-5 justify-center scroll-mt-24 items-center pb-5 sm:gap-10"
       id="contacts"
     >
       {/* Contact Section */}

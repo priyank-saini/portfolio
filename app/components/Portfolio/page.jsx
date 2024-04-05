@@ -2,78 +2,120 @@
 
 import { motion, useInView } from "framer-motion";
 import { useState, useRef } from "react";
+import Image from "next/image";
+import Tilt from "react-parallax-tilt";
+import Link from "next/link";
 
 const portfolioData = [
   {
     name: "TRAVEL APP",
     domain: "FRONT-END",
-    icon: "./assets/travel.png",
+    icon: "/assets/travel.png",
+    tech: ["Next js", "Tailwind"],
+    link: "https://github.com/priyank-saini/travel-app.git",
   },
   {
     name: "PLINTH 2024",
     domain: "UI/UX",
-    icon: "./assets/plinth.png",
+    icon: "/assets/plinth.png",
+    tech: ["Figma"],
+    link: "https://github.com/priyank-saini/Plinth-2k24.git",
   },
   {
     name: "SOCIAL MEDIA",
     domain: "FRONT-END + UI/UX",
-    icon: "./assets/social-media.png",
+    icon: "/assets/social-media.png",
+    tech: ["Next js", "Tailwind", "Figma"],
+    link: "https://github.com/priyank-saini/social-media-webapp.git",
   },
   {
     name: "E-COMMERCE",
     domain: "FULL STACK (UPCOMING)",
-    icon: "./assets/default.png",
+    icon: "/assets/default.png",
+    tech: ["Next js", "Tailwind", "mongoDB"],
+    link: "https://github.com/priyank-saini/e-commerce.git",
   },
 ];
 
-const container = {
-  hidden: { opacity: 0.5 },
-  show: {
-    opacity: 1,
-    transition: {
-      delay: 0.5,
-      duration: 0.5, // Adjust the duration as needed (in seconds)
-      ease: "easeInOut", // Choose an easing function (e.g., easeInOut, easeOut, etc.)
-    },
-  },
+const Card = ({ image, title, tech, link }) => {
+  return (
+    <div className="card flex flex-col h-[500px] bg-zinc-900 rounded-lg">
+      <Link
+        target="_blank"
+        href={link}
+        className="w-10 h-10 rounded-full border border-black absolute bottom-6 right-5 z-10 shadow-lg"
+      >
+        <Image src="/assets/github.png" className="rounded-full" fill />
+      </Link>
+      <div className="h-[70%] w-full">
+        <div className="relative w-full h-full">
+          <Image
+            src={image || ""}
+            alt="Travel"
+            fill
+            className="object-cover rounded-t-lg"
+          />
+        </div>
+      </div>
+      <div className="flex flex-col gap-8 p-5">
+        <h1 className="font-black text-[40px]">{title}</h1>
+        <div className="flex flex-row gap-5">
+          {tech.map((skill, index) => {
+            return (
+              <p
+                key={`${index}-${skill}`}
+                className="font-semibold text-[15px] px-3 py-2 border-2 border-gray-200 rounded-lg"
+              >
+                {skill}
+              </p>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const Portfolio = () => {
-  const [hoveredProject, setHoveredProject] = useState(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const variants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-    transition: { duration: 0.5 },
-  };
+  const [image, setimage] = useState("/assets/default.png");
+  const [tech, setTech] = useState(["Next js", "Tailwind", "mongoDB"]);
+  const [title, setTitle] = useState("E-COMMERCE");
+  const [link, setLink] = useState(
+    "https://github.com/priyank-saini/e-commerce.git"
+  );
 
   return (
     <motion.div
-      className="px-10 sm:20 flex flex-col sm:gap-10 gap-5 scroll-mt-24"
+      className="flex flex-col scroll-mt-24 gap-20 pb-10"
       id="projects"
     >
       <div className="flex flex-col gap-5">
-        <p className="text-[#7FE143] text-[30px]">My Portfolio</p>
+        <p className="text-[#7FE143] text-[30px]">Portfolio</p>
         <p className="sm:text-3xl text-xl font-medium">
           Selected Works 2022-2024
         </p>
       </div>
 
-      <div className="w-full flex sm:flex-row flex-col gap-5 sm:gap-20">
+      <div className="w-full flex sm:flex-row flex-col items-center justify-between">
         <motion.div
           ref={ref}
           initial={{ x: -200 }} // Start position (left)
           animate={{ x: isInView ? 0 : -200 }} // End position (right when visible, left otherwise)
           transition={{ duration: 1 }} // Animation duration
-          className="sm:w-1/2 w-full h-[700px] bg-black rounded-[50px] relative flex items-center justify-center"
+          className="sm:w-1/2 w-full flex justify-center"
         >
-          <img
+          {/* <img
             src={hoveredProject ? hoveredProject.icon : "./assets/default.png"}
             className="object-cover h-[60%] w-full rounded-3xl transition-opacity duration-300 ease-in-out"
             alt=""
-          />
+          /> */}
+
+          <Tilt className="h-[500px] w-[70%]">
+            <Card title={title} image={image} tech={tech} link={link} />
+          </Tilt>
         </motion.div>
 
         <motion.div
@@ -87,10 +129,15 @@ const Portfolio = () => {
           {portfolioData.map((project, index) => (
             <motion.div key={index} className="w-full flex flex-col gap-10">
               <div className="w-full h-[3px] bg-zinc-300 rounded-[100px]"></div>
-              <div
-                onMouseEnter={() => setHoveredProject(project)}
-                onMouseLeave={() => setHoveredProject(null)}
-                className="flex flex-row justify-between w-full items-center cursor-pointer"
+              <motion.button
+                onHoverStart={() => {
+                  setimage(project.icon);
+                  setTech(project.tech);
+                  setTitle(project.name);
+                  setLink(project.link);
+                }}
+                whileTap={{ scale: 0.8 }}
+                className="flex flex-row justify-between w-full items-center"
               >
                 <p className="sm:text-[24px] text-[18px] font-bold">
                   {project.name}
@@ -98,7 +145,7 @@ const Portfolio = () => {
                 <p className="sn:text-[18px] text-[12px] font-bold text-zinc-400">
                   {project.domain}
                 </p>
-              </div>
+              </motion.button>
             </motion.div>
           ))}
         </motion.div>

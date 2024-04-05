@@ -37,7 +37,7 @@ const Page = () => {
 
   return (
     <section className='scroll-mt-24' id="about">
-      <main className="px-10 sm:px-20 flex sm:flex-row flex-col">
+      <main className="flex sm:flex-row flex-col">
         {/* Left Side */}
         <motion.div
           ref={ref}

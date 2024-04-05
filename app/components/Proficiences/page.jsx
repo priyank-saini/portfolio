@@ -14,7 +14,7 @@ const Page = () => {
   }
 
   return (
-    <motion.div className='flex flex-col pl-10 justify-center items-start sm:items-center w-full scroll-mt-24 sm:gap-10 gap-5'>
+    <motion.div className='flex flex-col justify-center items-start sm:items-center w-full scroll-mt-24 sm:gap-10 gap-5'>
         <p className='text-[30px] text-[#7FE143]'>Proficiences</p>
         <p className='text-[15px] sm:text-[20px] w-2/3 text-left sm:text-center' >Proficient in cutting-edge technologies, equipped with the latest tools and frameworks to deliver innovative front-end solutions and captivating user experiences.</p>
         <div className='flex flex-row w-full sm:w-[90%] justify-start sm:justify-center items-start'>
