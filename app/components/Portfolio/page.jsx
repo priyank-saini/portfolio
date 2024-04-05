@@ -1,6 +1,6 @@
 "use client";
 
-import { inView, motion, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useState, useRef } from "react";
 
 const portfolioData = [
@@ -51,7 +51,7 @@ const Portfolio = () => {
 
   return (
     <motion.div
-      className="px-20 flex flex-col gap-10 scroll-mt-24"
+      className="px-10 sm:20 flex flex-col sm:gap-10 gap-5 scroll-mt-24"
       id="projects"
     >
       <div className="flex flex-col gap-5">
@@ -61,7 +61,7 @@ const Portfolio = () => {
         </p>
       </div>
 
-      <div className="w-full flex sm:flex-row flex-col gap-20">
+      <div className="w-full flex sm:flex-row flex-col gap-5 sm:gap-20">
         <motion.div
           ref={ref}
           initial={{ x: -200 }} // Start position (left)

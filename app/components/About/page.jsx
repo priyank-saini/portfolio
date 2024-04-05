@@ -37,7 +37,7 @@ const Page = () => {
 
   return (
     <section className='scroll-mt-24' id="about">
-      <main className="px-20 flex sm:flex-row flex-col">
+      <main className="px-10 sm:px-20 flex sm:flex-row flex-col">
         {/* Left Side */}
         <motion.div
           ref={ref}
@@ -49,7 +49,7 @@ const Page = () => {
         >
           <div className="flex flex-col gap-10">
             <p className="text-[30px] text-[#7FE143]">About Me</p>
-            <p className="sm:text-[24px] text-[20px]">
+            <p className="sm:text-[30px] text-[20px]">
               Consistently deliver exceptional quality work with precision and
               finesse
             </p>
@@ -68,7 +68,7 @@ const Page = () => {
           transition={"transition"}
           className="sm:w-1/2 w-full sm:mt-[200px] pt-[50px]"
         >
-          <p className="text-[20px]">
+          <p className="text-[15px] sm:text-[20px]">
             I am Priyank Saini, a seasoned Frontend Developer and UI/UX
             Designer, dedicated to crafting captivating digital experiences.
             With expertise in the latest technologies, I seamlessly blend
@@ -79,13 +79,13 @@ const Page = () => {
             lasting impression.
           </p>
           <div className="flex flex-row items-center justify-center pt-12 gap-20">
-            {achievement.map((achievements, index) => {
+            {achievement.map((achievements) => {
               return (
                 <div
                   key={achievements.value}
                   className="flex flex-col justify-center items-center"
                 >
-                  <p className="sm:text-[70px] text-[40px] font-black flex flex-row">
+                  <p className="sm:text-[70px] text-[25px] font-black flex flex-row">
                     <AnimatedNumbers
                       transitions={(index) => ({
                         type: "spring",
@@ -95,7 +95,7 @@ const Page = () => {
                     />{" "}
                     <span className="text-[#7FE143]">+</span>
                   </p>
-                  <p className="sm:text-[24px] text-[15px] text-center">{achievements.metric}</p>
+                  <p className="sm:text-[24px] text-[12px] text-center">{achievements.metric}</p>
                 </div>
               );
             })}

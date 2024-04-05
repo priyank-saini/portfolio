@@ -8,7 +8,7 @@ const page = () => {
     <div className="flex flex-col justify-between scroll-mt-24">
       <div className="h-full flex flex-col gap-10">
 
-        <div className="px-[50px] sm:px-20 h-1/3">
+        <div className="px-10 sm:px-20 h-1/3">
           {/* <img src="./assets/background.png" alt="" className="object-cover w-full h-full rounded-[50px] border-white border-2"/> */}
           <video
             className="w-full h-full object-cover rounded-[50px]"
@@ -20,11 +20,11 @@ const page = () => {
           </video>
         </div>
 
-        <div className="flex flex-col w-auto px-20 h-1/2">
+        <div className="flex flex-col w-auto px-10 h-1/2">
           <p className="sm:text-3xl font-semibold text-[#7FE143] text-[25px]">
             Hi I&apos;m,
           </p>
-          <p className="sm:text-[50px] font-black text-[20px]">
+          <p className="sm:text-[50px] font-black text-[15px]">
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
@@ -41,7 +41,7 @@ const page = () => {
               repeat={Infinity}
             />
           </p>
-          <p className="text-[20px]">
+          <p className="sm:text-[20px] text-[15px]">
             Welcome to my digital realm where creativity meets functionality,
             curated by Priyank Saini - Front-end Developer and UI/UX Designer
             extraordinaire.

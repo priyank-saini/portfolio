@@ -34,7 +34,7 @@ const Footer = () => {
   const contact = {
     gmail: "priyank_saini@yahoo.com",
     phone: "+91 8689031239",
-    address: "The LNM Institute of Information Technology",
+    address: "Jaipur, Rajasthan, India",
   };
 
   const form = useRef();
@@ -65,11 +65,11 @@ const Footer = () => {
       initial="initial"
       animate={isInView ? "animate" : "initial"}
       transition={"transition"}
-      className="flex flex-col gap-10 justify-center scroll-mt-24 items-center pb-2 px-20"
+      className="flex flex-col gap-5 justify-center scroll-mt-24 items-center pb-2 sm:px-20 px-10 sm:gap-10"
       id="contacts"
     >
       {/* Contact Section */}
-      <div className="w-full sm:h-[600px] rounded-lg sm:bg-zinc-900 px-[50px] sm:p-[50px] flex sm:flex-row flex-col justify-center">
+      <div className="w-full sm:h-[700px] h-[1000px] rounded-lg sm:bg-zinc-900 sm:p-[50px] flex sm:flex-row flex-col justify-center">
         <div className="sm:w-1/2 w-full flex flex-col gap-10">
           <div className="flex flex-row gap-5">
             <p className="text-[30px] text-[#7FE143]">Collaboration</p>
@@ -95,7 +95,7 @@ const Footer = () => {
         </div>
 
         <form
-          className="sm:w-1/2 w-auto bg-[white] rounded-lg flex flex-col p-5 sm:m-0 mt-20 justify-between"
+          className="sm:w-1/2 w-auto sm:h-auto h-[500px] bg-[white] rounded-lg flex flex-col p-5 sm:m-0 mt-20 justify-between"
           ref={form}
           action="submit"
           onSubmit={sendEmail}
@@ -156,7 +156,7 @@ const Footer = () => {
 
       <div className="sm:w-[100%] h-px bg-white"></div>
 
-      <div className="flex w-full sm:justify-between flex-col sm:flex-row gap-10 px-[50px]">
+      <div className="flex w-full sm:justify-between flex-col sm:flex-row gap-10 sm:px-[50px]">
         <div className="sm:w-1/2 w-full flex flex-col gap-10">
           <p className="sm:text-[24px] text-[18px] font-semibold">
             Crafting digital experiences one pixel at a time, Web Development &

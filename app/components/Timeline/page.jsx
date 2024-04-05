@@ -14,7 +14,7 @@ const Page = () => {
   });
 
   return (
-    <div ref={ref} className="px-20 text-white">
+    <div ref={ref} className="px-10 sm:px-20 text-white">
       <VerticalTimeline lineColor="#fff">
         {timelineData.map((item) => (
           <VerticalTimelineElement

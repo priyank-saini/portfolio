@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
-    <div className="navbar z-20 h-[80px] text-white px-20 flex items-center justify-between text-[24px] w-full bg-black sm:visible sticky top-0">
+    <div className="navbar hidden z-20 h-[80px] text-white px-20 flex items-center justify-between text-[24px] w-full bg-black sm:visible fixed">
       {/*Navbar*/}
       {/* Left Part */}
       <div className="flex flex-row">
@@ -30,7 +30,7 @@ const Navbar = () => {
       </div>
       {/* Right Part */}
       <motion.button whileHover={{ scale: 1.1 }}>
-        <Link href="#footer" className="text-[20px]">
+        <Link href="#contacts" className="text-[20px]">
           Get in touch
         </Link>
       </motion.button>
