@@ -58,13 +58,13 @@ const Card = ({ image, title, tech, link }) => {
         </div>
       </div>
       <div className="flex flex-col gap-8 p-5">
-        <h1 className="font-black sm:text-[40px] text-[30px]">{title}</h1>
-        <div className="flex flex-row gap-5">
+        <h1 className="font-black sm:text-[40px] text-[20px]">{title}</h1>
+        <div className="flex flex-row am:gap-5 gap-2">
           {tech.map((skill, index) => {
             return (
               <p
                 key={`${index}-${skill}`}
-                className="font-semibold sm:text-[15px] text-[10px] px-3 py-2 border-2 border-gray-200 rounded-lg"
+                className="font-semibold sm:text-[15px] text-[10px] px-2 py-1 border-2 border-gray-200 rounded-lg"
               >
                 {skill}
               </p>
@@ -79,6 +79,18 @@ const Card = ({ image, title, tech, link }) => {
 const Portfolio = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  const variants = {
+    initial: { x: -200, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+    transition: { duration: 0.5 },
+  };
+
+  const variants2 = {
+    initial: { x: +200, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+    transition: { duration: 0.5 },
+  };
 
   const [image, setimage] = useState("/assets/default.png");
   const [tech, setTech] = useState(["Next js", "Tailwind", "mongoDB"]);
@@ -99,12 +111,13 @@ const Portfolio = () => {
         </p>
       </div>
 
-      <div className="w-full flex sm:flex-row flex-col items-center justify-between">
+      <div className="w-full flex sm:flex-row flex-col gap-10 items-center justify-between">
         <motion.div
           ref={ref}
-          initial={{ x: -400 }} // Start position (left)
-          animate={{ x: isInView ? 0 : -400 }} // End position (right when visible, left otherwise)
-          transition={{ duration: 1 }} // Animation duration
+          variants={variants}
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          transition={"transition"}
           className="sm:w-1/2 w-full flex justify-center"
         >
           <Tilt className="h-[500px] sm:w-[70%] w-full">
@@ -114,9 +127,10 @@ const Portfolio = () => {
 
         <motion.div
           ref={ref}
-          initial={{ x: +400 }}
-          animate={{ x: isInView ? 0 : +400 }}
-          transition={{ duration: 1 }}
+          variants={variants2}
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          transition={"transition"}
           className="sm:w-1/2 w-full flex flex-col items-start justify-center text-white gap-10"
         >
           <h1 className="text-[40px] font-extrabold">PROJECTS</h1>
@@ -131,6 +145,12 @@ const Portfolio = () => {
                   setLink(project.link);
                 }}
                 whileTap={{ scale: 0.8 }}
+                onClick={() => {
+                  setimage(project.icon);
+                  setTech(project.tech);
+                  setTitle(project.name);
+                  setLink(project.link);
+                }}
                 className="flex flex-row justify-between w-full items-center"
               >
                 <p className="sm:text-[24px] text-[18px] font-bold">
