@@ -3,10 +3,10 @@ import { TypeAnimation } from "react-type-animation";
 
 const page = () => {
   return (
-    <div className="flex flex-col justify-between scroll-mt-24 pt-[150px]">
+    <div className="flex flex-col justify-between scroll-mt-24">
       <div className="h-full flex flex-col sm:gap-20 gap-10">
 
-        <div className="h-1/3">
+        <div className="h-1/3 sm:flex hidden">
           {/* <img src="./assets/background.png" alt="" className="object-cover w-full h-full rounded-[50px] border-white border-2"/> */}
           <video
             className="w-full h-full object-cover rounded-[50px]"
@@ -19,10 +19,10 @@ const page = () => {
         </div>
 
         <div className="flex flex-col w-auto h-1/2">
-          <p className="sm:text-3xl font-semibold text-[#7FE143] text-[25px]">
+          <p className="sm:text-3xl font-semibold sm:text-left  text-[#7FE143] text-[25px]">
             Hi I&apos;m,
           </p>
-          <p className="sm:text-[50px] font-black text-[15px]">
+          <p className="sm:text-[50px] sm:text-left font-black text-[15px]">
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
@@ -39,7 +39,7 @@ const page = () => {
               repeat={Infinity}
             />
           </p>
-          <p className="sm:text-[20px] text-[15px]">
+          <p className="sm:text-[20px] text-[15px] sm:text-left">
             Welcome to my digital realm where creativity meets functionality,
             curated by Priyank Saini - Front-end Developer and UI/UX Designer
             extraordinaire.

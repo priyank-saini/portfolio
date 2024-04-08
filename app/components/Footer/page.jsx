@@ -79,15 +79,15 @@ const Footer = () => {
             Let&apos;s talk to Collaboration
           </div>
           <div className="flex flex-col gap-10 pt-10">
-            <p className="font-bold text-white sm:text-[18px] text-[12px] flex flex-row gap-3">
+            <p className="font-bold text-white sm:text-[18px] text-[12px] flex flex-row gap-3 items-center">
               <img src="./assets/mail.png" alt="" className="w-[30px]" />
               {contact.gmail}
             </p>
-            <p className="font-bold text-white sm:text-[18px] text-[12px] flex flex-row gap-3">
+            <p className="font-bold text-white sm:text-[18px] text-[12px] flex flex-row gap-3 items-center">
               <img src="./assets/phone.png" alt="" className="w-[30px]" />
               {contact.phone}
             </p>
-            <p className="font-bold text-white sm:text-[18px] text-[12px] flex flex-row gap-3">
+            <p className="font-bold text-white sm:text-[18px] text-[12px] flex flex-row gap-3 items-center">
               <img src="./assets/pin.png" alt="" className="w-[30px]" />
               {contact.address}
             </p>

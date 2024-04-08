@@ -58,13 +58,13 @@ const Card = ({ image, title, tech, link }) => {
         </div>
       </div>
       <div className="flex flex-col gap-8 p-5">
-        <h1 className="font-black text-[40px]">{title}</h1>
+        <h1 className="font-black sm:text-[40px] text-[30px]">{title}</h1>
         <div className="flex flex-row gap-5">
           {tech.map((skill, index) => {
             return (
               <p
                 key={`${index}-${skill}`}
-                className="font-semibold text-[15px] px-3 py-2 border-2 border-gray-200 rounded-lg"
+                className="font-semibold sm:text-[15px] text-[10px] px-3 py-2 border-2 border-gray-200 rounded-lg"
               >
                 {skill}
               </p>
@@ -102,18 +102,12 @@ const Portfolio = () => {
       <div className="w-full flex sm:flex-row flex-col items-center justify-between">
         <motion.div
           ref={ref}
-          initial={{ x: -200 }} // Start position (left)
-          animate={{ x: isInView ? 0 : -200 }} // End position (right when visible, left otherwise)
+          initial={{ x: -400 }} // Start position (left)
+          animate={{ x: isInView ? 0 : -400 }} // End position (right when visible, left otherwise)
           transition={{ duration: 1 }} // Animation duration
           className="sm:w-1/2 w-full flex justify-center"
         >
-          {/* <img
-            src={hoveredProject ? hoveredProject.icon : "./assets/default.png"}
-            className="object-cover h-[60%] w-full rounded-3xl transition-opacity duration-300 ease-in-out"
-            alt=""
-          /> */}
-
-          <Tilt className="h-[500px] w-[70%]">
+          <Tilt className="h-[500px] sm:w-[70%] w-full">
             <Card title={title} image={image} tech={tech} link={link} />
           </Tilt>
         </motion.div>
