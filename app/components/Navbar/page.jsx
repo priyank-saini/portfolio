@@ -18,19 +18,19 @@ const Navbar = () => {
         {/* Left Part */}
         <div className="flex  flex-row">
           <li className="flex flex-row gap-10 text-[20px]">
-            <motion.ul whileHover={{ scale: 1.1 }}>
+            <motion.ul whileHover={{ scale: 1.1 }} whileTap={{scale: 0.8}}>
               <Link href="/">Home</Link>
             </motion.ul>
-            <motion.ul whileHover={{ scale: 1.1 }}>
+            <motion.ul whileHover={{ scale: 1.1 }} whileTap={{scale: 0.8}} >
               <Link href={"#about"}>About</Link>
             </motion.ul>
-            <motion.ul whileHover={{ scale: 1.1 }}>
+            <motion.ul whileHover={{ scale: 1.1 }} whileTap={{scale: 0.8}}>
               <Link href={"#experiences"}>Experiences</Link>
             </motion.ul>
-            <motion.ul whileHover={{ scale: 1.1 }}>
+            <motion.ul whileHover={{ scale: 1.1 }} whileTap={{scale: 0.8}}>
               <Link href={"#projects"}>Projects</Link>
             </motion.ul>
-            <motion.ul whileHover={{ scale: 1.1 }}>
+            <motion.ul whileHover={{ scale: 1.1 }} whileTap={{scale: 0.8}}>
               <Link href={"#contacts"}>Contacts</Link>
             </motion.ul>
           </li>

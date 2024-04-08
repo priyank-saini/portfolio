@@ -21,19 +21,20 @@ const Page = () => {
             visible={inView}
             key={item.id}
             date={item.date}
+            icon={item.icon}
             iconStyle={{
               background: "black",
             }}
-            // icon={<LNMIIT/>}
             contentStyle={{
               background: "#0000",
               boxShadow: "none",
               border: "1px solid white",
               padding: "2rem",
+              fontSize: "10px",
             }}
           >
             <div className="flex flex-row justify-between items-center">
-              <h3 className="vertical-timeline-element-title font-bold text-2xl">{item.title}</h3>
+              <h3 className="vertical-timeline-element-title font-bold sm:text-2xl text-xl">{item.title}</h3>
               <p className="text-[#7FE143]">{item.location}</p>
             </div>
             <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75 pt-2">

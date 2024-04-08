@@ -25,7 +25,7 @@ const Page = () => {
           <img src="/assets/Nodejs.png" alt="nextjs" className='sm:w-20 w-14 justify-center items-center'/>
           </div>
           <div className='sm:w-[15%] w-full h-[5rem] fill-none border-2 flex justify-center items-center'>
-          <img src="/assets/Figma.png" alt="nextjs" className='w-12 justify-center items-center'/>
+          <img src="/assets/Figma.png" alt="nextjs" className='w-8 justify-center items-center'/>
           </div>
           <div className='sm:w-[15%] w-full h-[5rem] fill-none border-2 flex justify-center items-center'>
           <img src="/assets/react.png" alt="nextjs" className='w-12 justify-center items-center'/>
