@@ -9,6 +9,7 @@ const AnimatedNumbers = dynamic(
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { redirect } from 'next/dist/server/api-utils';
 
 const achievement = [
   {
@@ -54,7 +55,7 @@ const Page = () => {
               finesse
             </p>
             <div>
-              <button className="px-3 py-2 fill-none border-2 sm:text-[24px] text-[20px]">Hire me</button>
+              <a target="_blank" className="px-5 py-3 fill-none border-2 sm:text-[24px] text-[20px]" href='https://drive.google.com/file/d/1HKt3qyoynw4JgQkdXEVCn2AREE7bw0WD/view?usp=drive_link'>Resume</a>
             </div>
           </div>
         </motion.div>

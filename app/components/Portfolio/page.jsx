@@ -29,10 +29,10 @@ const portfolioData = [
     link: "https://github.com/priyank-saini/social-media-webapp.git",
   },
   {
-    name: "E-COMMERCE",
-    domain: "FULL STACK (UPCOMING)",
-    icon: "/assets/default.png",
-    tech: ["Next js", "Tailwind", "mongoDB"],
+    name: "REACT NATIVE MOBILE APP",
+    domain: "FULL STACK",
+    icon: "/assets/react_native.png",
+    tech: ["React Native", "Native wind", "Expo"],
     link: "https://github.com/priyank-saini/e-commerce.git",
   },
 ];
@@ -92,11 +92,11 @@ const Portfolio = () => {
     transition: { duration: 0.5 },
   };
 
-  const [image, setimage] = useState("/assets/default.png");
-  const [tech, setTech] = useState(["Next js", "Tailwind", "mongoDB"]);
-  const [title, setTitle] = useState("E-COMMERCE");
+  const [image, setimage] = useState("/assets/travel.png");
+  const [tech, setTech] = useState(["Next js", "Tailwind"]);
+  const [title, setTitle] = useState("TRAVEL APP");
   const [link, setLink] = useState(
-    "https://github.com/priyank-saini/e-commerce.git"
+    "https://github.com/priyank-saini/travel-app.git"
   );
 
   return (

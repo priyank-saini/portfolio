@@ -22,9 +22,7 @@ const Page = () => {
             key={item.id}
             date={item.date}
             icon={item.icon}
-            iconStyle={{
-              background: "black",
-            }}
+            iconStyle={{ background: 'white', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             contentStyle={{
               background: "#0000",
               boxShadow: "none",
