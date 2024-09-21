@@ -23,10 +23,10 @@ const portfolioData = [
   },
   {
     name: "SOCIAL MEDIA",
-    domain: "FRONT-END + UI/UX",
-    icon: "/assets/social-media.png",
+    domain: "FULL STACK + UI/UX",
+    icon: "/assets/Login.png",
     tech: ["Next js", "Tailwind", "Figma"],
-    link: "https://github.com/priyank-saini/social-media-webapp.git",
+    link: "https://github.com/priyank-saini/AlumniConnect",
   },
   {
     name: "REACT NATIVE MOBILE APP",

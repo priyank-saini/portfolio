@@ -16,7 +16,7 @@ const Page = () => {
   return (
     <motion.div className='flex flex-col justify-center items-start sm:items-center w-full scroll-mt-24 sm:gap-10 gap-5'>
         <p className='text-[30px] text-[#7FE143] text-left'>Proficiences</p>
-        <p className='text-[15px] sm:text-[20px] sm:w-2/3 w-full sm:text-center' >Proficient in cutting-edge technologies, equipped with the latest tools and frameworks to deliver innovative front-end solutions and captivating user experiences.</p>
+        <p className='text-[15px] sm:text-[20px] sm:w-2/3 w-full sm:text-center' >Proficient in cutting-edge technologies, equipped with the latest tools and frameworks to deliver innovative full-stack solutions and captivating user experiences.</p>
         <div className='flex sm:flex-row flex-col w-full sm:w-[90%] justify-center items-start'>
           <div className='sm:w-[15%] w-full h-[5rem] fill-none border-2 flex justify-center items-center'>
             <img src="/assets/nextjs.png" alt="nextjs" className='sm:w-20 w-16 justify-center items-center'/>

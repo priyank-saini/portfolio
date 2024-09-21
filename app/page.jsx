@@ -11,7 +11,7 @@ import Navbar from "./components/Navbar/page";
 
 const page = () => {
   return (
-    <main className="flex flex-col sm:gap-[50px] gap-[80px] sm:px-20 px-5  overflow-hidden">
+    <main className="flex flex-col sm:gap-[50px] gap-[80px] sm:px-20 px-5 overflow-hidden">
       <Navbar/>
       <Home/>
       <Proficiences/>

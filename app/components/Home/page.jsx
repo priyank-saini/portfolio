@@ -41,7 +41,7 @@ const page = () => {
           </p>
           <p className="sm:text-[20px] text-[15px] sm:text-left">
             Welcome to my digital realm where creativity meets functionality,
-            curated by Priyank Saini - Front-end Developer and UI/UX Designer
+            curated by Priyank Saini - Full Stack Developer and UI/UX Designer
             extraordinaire.
           </p>
         </div>

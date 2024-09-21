@@ -14,7 +14,7 @@ import { redirect } from 'next/dist/server/api-utils';
 const achievement = [
   {
     metric: "Projects Complete",
-    value: 20,
+    value: 10,
   },
   {
     metric: "Years Experience",
@@ -22,7 +22,7 @@ const achievement = [
   },
   {
     metric: "Clients Worldwide",
-    value: 50,
+    value: 7,
   },
 ];
 
@@ -37,7 +37,7 @@ const Page = () => {
   };
 
   return (
-    <section className='scroll-mt-24' id="about">
+    <section className="scroll-mt-24" id="about">
       <main className="flex sm:flex-row flex-col">
         {/* Left Side */}
         <motion.div
@@ -55,7 +55,13 @@ const Page = () => {
               finesse
             </p>
             <div>
-              <a target="_blank" className="px-5 py-3 fill-none border-2 sm:text-[24px] text-[20px]" href='https://drive.google.com/file/d/1HKt3qyoynw4JgQkdXEVCn2AREE7bw0WD/view?usp=drive_link'>Resume</a>
+              <a
+                target="_blank"
+                className="px-5 py-3 fill-none border-2 sm:text-[24px] text-[20px]"
+                href="https://drive.google.com/file/d/1HKt3qyoynw4JgQkdXEVCn2AREE7bw0WD/view?usp=drive_link"
+              >
+                Resume
+              </a>
             </div>
           </div>
         </motion.div>
@@ -70,14 +76,15 @@ const Page = () => {
           className="sm:w-1/2 w-full sm:mt-[200px] pt-[50px]"
         >
           <p className="text-[15px] sm:text-[20px]">
-            I am Priyank Saini, a seasoned Frontend Developer and UI/UX
-            Designer, dedicated to crafting captivating digital experiences.
-            With expertise in the latest technologies, I seamlessly blend
-            creativity and functionality to deliver innovative solutions. My
-            passion for design fuels my commitment to precision, ensuring every
-            project exceeds expectations. Let&apos;s collaborate to transform ideas
-            into visually stunning and user-friendly interfaces that leave a
-            lasting impression.
+            I am Priyank Saini, a seasoned Full Stack Developer and UI/UX
+            Designer, dedicated to crafting captivating digital experiences from
+            concept to deployment. With expertise in both frontend and backend
+            technologies, I seamlessly blend creativity and functionality to
+            deliver end-to-end innovative solutions. My passion for design and
+            development fuels my commitment to precision, ensuring every project
+            exceeds expectations. Let's collaborate to transform ideas into
+            visually stunning, efficient, and user-friendly interfaces that
+            leave a lasting impression.
           </p>
           <div className="flex flex-row items-center justify-center pt-12 gap-20">
             {achievement.map((achievements) => {
@@ -96,7 +103,9 @@ const Page = () => {
                     />{" "}
                     <span className="text-[#7FE143]">+</span>
                   </p>
-                  <p className="sm:text-[24px] text-[12px] text-center">{achievements.metric}</p>
+                  <p className="sm:text-[24px] text-[12px] text-center">
+                    {achievements.metric}
+                  </p>
                 </div>
               );
             })}

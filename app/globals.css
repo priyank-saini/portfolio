@@ -19,15 +19,29 @@ body {
 }
 
 @keyframes scroll {
-    to {
-      transform: translate(-50%);
-    }
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
+/* Define the reverse scrolling animation */
 @keyframes scrollrev {
-  to {
-    transform: translate(50%);
+  0% {
+    transform: translateX(-50%);
   }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+/* Ensure smooth scrolling without jank */
+.scroller {
+  display: flex;
+  gap: 2rem; /* Adjust the gap as needed */
+  will-change: transform;
 }
 
 ::placeholder {
