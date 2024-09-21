@@ -82,7 +82,7 @@ const Page = () => {
             technologies, I seamlessly blend creativity and functionality to
             deliver end-to-end innovative solutions. My passion for design and
             development fuels my commitment to precision, ensuring every project
-            exceeds expectations. Let's collaborate to transform ideas into
+            exceeds expectations. Let&apos;s collaborate to transform ideas into
             visually stunning, efficient, and user-friendly interfaces that
             leave a lasting impression.
           </p>
