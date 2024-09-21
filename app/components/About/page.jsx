@@ -1,15 +1,14 @@
 "use client";
 
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 const AnimatedNumbers = dynamic(
-  () => import('react-animated-numbers'),
-  { ssr: false }  // This line is important. It disables server-side rendering for this module.
+  () => import("react-animated-numbers"),
+  { ssr: false } // This line is important. It disables server-side rendering for this module.
 );
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { redirect } from 'next/dist/server/api-utils';
 
 const achievement = [
   {
