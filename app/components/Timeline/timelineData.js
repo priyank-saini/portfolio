@@ -32,7 +32,7 @@ export const timelineData = [
     location: "Remote",
     description:
       "As a freelance UI/UX Designer, I explored the complexities of designing intuitive and engaging digital experiences. Working independently with diverse clients, I crafted user-centered interfaces that balanced aesthetics with functionality. Through close collaboration and iteration, I ensured seamless user journeys while optimizing the overall design for usability and performance. This experience refined my design expertise and deepened my understanding of user behavior, project management, and delivering impactful solutions that align with business goals.",
-    date: "March 20224 -  June 2024",
+    date: "March 2024 -  June 2024",
     icon: <img src="./assets/oneurl.png" />
   },
 ];
