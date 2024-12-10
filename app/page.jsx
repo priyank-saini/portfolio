@@ -1,7 +1,6 @@
 import Home from "./components/Home/page";
 import Proficiences from "./components/Proficiences/page";
 import About from "./components/About/page";
-import Lines from "./components/Lines/page";
 import Experiences from "./components/Experiences/page";
 import Timeline from "./components/Timeline/page";
 import Line from "./components/Line/page";
@@ -16,7 +15,7 @@ const page = () => {
       <Home/>
       <Proficiences/>
       <About/>
-      <Lines/>
+      <Line/>
       <Experiences/>
       <Timeline/>
       <Line/>

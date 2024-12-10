@@ -57,7 +57,7 @@ const Page = () => {
               <a
                 target="_blank"
                 className="px-5 py-3 fill-none border-2 sm:text-[24px] text-[20px]"
-                href="https://drive.google.com/file/d/1HKt3qyoynw4JgQkdXEVCn2AREE7bw0WD/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1X2NwbfR5GzG8NM5j1o3fw3wT2ZQT7dRx/view?usp=sharing"
               >
                 Resume
               </a>
