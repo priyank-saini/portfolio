@@ -3,6 +3,7 @@
 import { React, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ const Navbar = () => {
   return (
     <section className="navbar w-full">
       {/* Navbar for larger screens */}
-      <div className="container mx-auto z-20 h-[80px] px-20 text-white flex items-center justify-between text-[24px] bg-black fixed left-0 right-0 rounded-lg">
+      <div className="container mx-auto z-20 h-[80px] px-20 text-white flex items-center justify-between text-[24px] bg-black/80 backdrop-blur-md fixed left-0 right-0 rounded-lg border-b border-white/10">
         {/* Left Part */}
         <div className="flex lg:gap-10">
           <ul className="hidden lg:flex flex-row gap-10 text-[20px]">
@@ -44,49 +45,75 @@ const Navbar = () => {
         </motion.button>
 
         {/* Hamburger Menu for mobile screens */}
-        <button
-          onClick={handleOpen}
-          aria-label="Toggle Menu"
-          className="lg:hidden"
-        >
-          <img
-            src={`./assets/${isOpen ? "close.png" : "menu.png"}`}
-            alt="menu"
-            className="w-[40px] h-[40px] cursor-pointer"
-          />
-        </button>
+        <div className="flex flex-row justify-between items-center w-full">
+          <h1 className="text-[30px] font-bold text-white">Portfolio</h1>
+          <buttons
+            onClick={handleOpen}
+            aria-label="Toggle Menu"
+            className="lg:hidden"
+          >
+            <Image
+              src={`/assets/${isOpen ? "close.png" : "menu.png"}`}
+              alt="menu"
+              width={30}
+              height={30}
+              className="cursor-pointer"
+            />
+          </buttons>
+        </div>
       </div>
 
       {/* Dropdown Menu for mobile */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -20 }}
+        transition={{ duration: 0.3 }}
         className={`${
           isOpen ? "flex" : "hidden"
-        } lg:hidden z-20 fixed top-[80px] flex-col gap-5 items-center justify-center w-full bg-zinc-900 p-5`}
+        } lg:hidden z-20 fixed top-[80px] flex-col gap-8 items-center justify-center w-full bg-gradient-to-b from-black/95 to-zinc-900/95 backdrop-blur-md p-8 border-b border-white/10`}
       >
-        <ul className="flex flex-col gap-5 text-[20px] items-center w-full">
-          <motion.li whileHover={{ scale: 1.1 }}>
+        <ul className="flex flex-col gap-8 text-[20px] items-center w-full">
+          <motion.li
+            whileHover={{ scale: 1.1, x: 10 }}
+            className="w-full text-center py-2 hover:bg-white/10 rounded-lg transition-colors"
+          >
             <Link href="/">Home</Link>
           </motion.li>
-          <motion.li whileHover={{ scale: 1.1 }}>
+          <motion.li
+            whileHover={{ scale: 1.1, x: 10 }}
+            className="w-full text-center py-2 hover:bg-white/10 rounded-lg transition-colors"
+          >
             <Link href="#about">About</Link>
           </motion.li>
-          <motion.li whileHover={{ scale: 1.1 }}>
+          <motion.li
+            whileHover={{ scale: 1.1, x: 10 }}
+            className="w-full text-center py-2 hover:bg-white/10 rounded-lg transition-colors"
+          >
             <Link href="#experiences">Experiences</Link>
           </motion.li>
-          <motion.li whileHover={{ scale: 1.1 }}>
+          <motion.li
+            whileHover={{ scale: 1.1, x: 10 }}
+            className="w-full text-center py-2 hover:bg-white/10 rounded-lg transition-colors"
+          >
             <Link href="#projects">Projects</Link>
           </motion.li>
-          <motion.li whileHover={{ scale: 1.1 }}>
+          <motion.li
+            whileHover={{ scale: 1.1, x: 10 }}
+            className="w-full text-center py-2 hover:bg-white/10 rounded-lg transition-colors"
+          >
             <Link href="#contacts">Contacts</Link>
           </motion.li>
         </ul>
 
-        <motion.button whileHover={{ scale: 1.1 }}>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          className="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors"
+        >
           <Link href="#contacts" className="text-[20px]">
             Get in touch
           </Link>
         </motion.button>
-      </div>
+      </motion.div>
     </section>
   );
 };
