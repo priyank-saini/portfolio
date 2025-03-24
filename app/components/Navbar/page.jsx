@@ -45,7 +45,7 @@ const Navbar = () => {
         </motion.button>
 
         {/* Hamburger Menu for mobile screens */}
-        <div className="flex flex-row justify-between items-center w-full">
+        <div className="lg:hidden flex flex-row justify-between items-center w-full">
           <h1 className="text-[30px] font-bold text-white">Portfolio</h1>
           <buttons
             onClick={handleOpen}
